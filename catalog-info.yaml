@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fq3ynmqiw-go-gitops
+  description: This is GitOps manifest for fq3ynmqiw-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=fq3ynmqiw-go
+    backstage.io/kubernetes-id: fq3ynmqiw-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fq3ynmqiw-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fq3ynmqiw-go
